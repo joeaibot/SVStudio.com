@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - SVStudio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://picsum.photos">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 1C10.3431 1 9 2.34315 9 4V12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12V4C15 2.34315 13.6569 1 12 1Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M19 10V12C19 16.4183 15.4183 20 11 20C6.58172 20 3 16.4183 3 12V10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 20V23" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8 23H16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h1>SVStudio</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Services</a>
+                        <div class="dropdown-content">
+                            <a href="index.html#practices">Practices</a>
+                            <a href="index.html#photography">Photography</a>
+                            <a href="index.html#podcast">Podcast</a>
+                            <a href="index.html#events">Events</a>
+                        </div>
+                    </li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="booking.html">Booking</a></li>
+                    <li><a href="calendar.html">Calendar</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html">Signup</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="team-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Meet Our Creative Team</h1>
+                <p class="hero-description">Behind every great project is a team of passionate professionals. Get to know the talented individuals who bring your creative vision to life at SVStudio.</p>
+                <div class="team-stats">
+                    <div class="stat">
+                        <span class="stat-number">6</span>
+                        <span class="stat-label">Experts</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">300+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="team-section">
+        <div class="container">
+            <div class="section-intro">
+                <h2>Our Creative Professionals</h2>
+                <p>From sound engineering to event coordination, our diverse team combines technical expertise with artistic vision to deliver exceptional results for every project.</p>
+            </div>
+
+            <!-- Videography Section -->
+            <div class="specialty-section">
+                <h3 class="specialty-title">Videography</h3>
+                <p class="specialty-description">Our videography experts capture stunning visuals and create compelling video content for events, promotions, and storytelling.</p>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://picsum.photos/250/250?random=11" alt="Joe" loading="lazy" width="250" height="250">
+                            <div class="member-badge">Video Expert</div>
+                        </div>
+                        <div class="member-content">
+                            <h4>Joe</h4>
+                            <p class="member-role">Video Production Specialist</p>
+                            <p class="member-bio">Professional videographer and content creator specializing in event coverage and promotional videos. Includes filming, editing, and post-production.</p>
+                            <div class="member-specialties">
+                                <span class="specialty-tag">Videography</span>
+                                <span class="specialty-tag">Video Editing</span>
+                                <span class="specialty-tag">Event Coverage</span>
+                            </div>
+                            <div class="member-rate">$300 per project</div>
+                            <button onclick="bookMember('Joe')" class="btn-primary">Book Joe</button>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://picsum.photos/250/250?random=13" alt="Carlos Rodriguez" loading="lazy" width="250" height="250">
+                            <div class="member-badge">Events</div>
+                        </div>
+                        <div class="member-content">
+                            <h4>Carlos Rodriguez</h4>
+                            <p class="member-role">Event Coordinator & Lighting Specialist</p>
+                            <p class="member-bio">Professional event coordinator with expertise in lighting design and stage setup. Ensures every event runs smoothly with perfect technical execution.</p>
+                            <div class="member-specialties">
+                                <span class="specialty-tag">Event Planning</span>
+                                <span class="specialty-tag">Lighting Design</span>
+                                <span class="specialty-tag">Stage Setup</span>
+                            </div>
+                            <div class="member-rate">$300 per project</div>
+                            <button onclick="bookMember('Carlos Rodriguez')" class="btn-primary">Book Carlos</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photography Section -->
+            <div class="specialty-section">
+                <h3 class="specialty-title">Photography</h3>
+                <p class="specialty-description">Our photographers specialize in capturing beautiful moments, from intimate portraits to dynamic event photography.</p>
+                <div class="team-grid">
+                    <div class="team-member featured">
+                        <div class="member-image">
+                            <img src="https://picsum.photos/250/250?random=12" alt="Jane Smith" loading="lazy" width="250" height="250">
+                            <div class="member-badge">Photography</div>
+                        </div>
+                        <div class="member-content">
+                            <h4>Jane Smith</h4>
+                            <p class="member-role">Portrait & Event Photographer</p>
+                            <p class="member-bio">Creative photographer capturing stunning portraits and event photography. Passionate about storytelling through images and creating memorable visual experiences.</p>
+                            <div class="member-specialties">
+                                <span class="specialty-tag">Portraits</span>
+                                <span class="specialty-tag">Event Photography</span>
+                                <span class="specialty-tag">Photo Editing</span>
+                            </div>
+                            <div class="member-rate">$300 per project</div>
+                            <button onclick="bookMember('Jane Smith')" class="btn-primary">Book Jane</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Audio Engineer Section -->
+            <div class="specialty-section">
+                <h3 class="specialty-title">Audio Engineering</h3>
+                <p class="specialty-description">Our audio engineers deliver crystal-clear sound quality for music production, podcasts, and live events.</p>
+                <div class="team-grid">
+                    <div class="team-member featured">
+                        <div class="member-image">
+                            <img src="https://picsum.photos/250/250?random=10" alt="Rey" loading="lazy" width="250" height="250">
+                            <div class="member-badge">Lead Engineer</div>
+                        </div>
+                        <div class="member-content">
+                            <h4>Rey</h4>
+                            <p class="member-role">Sound Engineer & Music Producer</p>
+                            <p class="member-bio">Specializes in Mexican regional music, including corridos tumbados. Expert in audio recording, mixing, and music production with over 10 years of experience.</p>
+                            <div class="member-specialties">
+                                <span class="specialty-tag">Audio Recording</span>
+                                <span class="specialty-tag">Music Production</span>
+                                <span class="specialty-tag">Live Sound</span>
+                            </div>
+                            <div class="member-rate">$300 per project</div>
+                            <button onclick="bookMember('Rey')" class="btn-primary">Book Rey</button>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://picsum.photos/250/250?random=14" alt="Maria Garcia" loading="lazy" width="250" height="250">
+                            <div class="member-badge">Audio Content</div>
+                        </div>
+                        <div class="member-content">
+                            <h4>Maria Garcia</h4>
+                            <p class="member-role">Podcast Producer & Host</p>
+                            <p class="member-bio">Experienced podcast producer and host specializing in engaging audio content. Expert in scriptwriting, recording, and audio editing for compelling storytelling.</p>
+                            <div class="member-specialties">
+                                <span class="specialty-tag">Podcast Production</span>
+                                <span class="specialty-tag">Scriptwriting</span>
+                                <span class="specialty-tag">Audio Editing</span>
+                            </div>
+                            <div class="member-rate">$300 per project</div>
+                            <button onclick="bookMember('Maria Garcia')" class="btn-primary">Book Maria</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Operations Section -->
+            <div class="specialty-section">
+                <h3 class="specialty-title">Operations & Management</h3>
+                <p class="specialty-description">Our operations team ensures seamless project execution and client satisfaction.</p>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://picsum.photos/250/250?random=15" alt="Sarah Johnson" loading="lazy" width="250" height="250">
+                            <div class="member-badge">Operations</div>
+                        </div>
+                        <div class="member-content">
+                            <h4>Sarah Johnson</h4>
+                            <p class="member-role">Studio Manager & Client Relations</p>
+                            <p class="member-bio">Dedicated studio manager ensuring seamless client experiences. Handles scheduling, client communication, and maintains our professional studio environment.</p>
+                            <div class="member-specialties">
+                                <span class="specialty-tag">Client Relations</span>
+                                <span class="specialty-tag">Operations</span>
+                                <span class="specialty-tag">Scheduling</span>
+                            </div>
+                            <div class="member-rate">$300 per project</div>
+                            <button onclick="bookMember('Sarah Johnson')" class="btn-primary">Book Sarah</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SVStudio</h3>
+                    <p>Your hub for creative practices, stunning photography, engaging podcasts, and memorable events.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="booking.html">Booking</a></li>
+                        <li><a href="calendar.html">Calendar</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="signup.html">Signup</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="index.html#practices">Practices</a></li>
+                        <li><a href="index.html#photography">Photography</a></li>
+                        <li><a href="index.html#podcast">Podcast</a></li>
+                        <li><a href="index.html#events">Events</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SVStudio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

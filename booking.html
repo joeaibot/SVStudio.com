@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking - SVStudio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 1C10.3431 1 9 2.34315 9 4V12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12V4C15 2.34315 13.6569 1 12 1Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M19 10V12C19 16.4183 15.4183 20 11 20C6.58172 20 3 16.4183 3 12V10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 20V23" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8 23H16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h1>SVStudio</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Services</a>
+                        <div class="dropdown-content">
+                            <a href="index.html#practices">Practices</a>
+                            <a href="index.html#photography">Photography</a>
+                            <a href="index.html#podcast">Podcast</a>
+                            <a href="index.html#events">Events</a>
+                        </div>
+                    </li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="booking.html">Booking</a></li>
+                    <li><a href="calendar.html">Calendar</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html">Signup</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <h2>Book a Team Member</h2>
+            <p>Select a team member, choose a date, pick a start hour and duration (hour blocks), and confirm the booking.</p>
+
+            <div class="booking-container">
+                <div class="booking-form-card">
+                    <h3>Booking Details</h3>
+                    <div class="form-group">
+                        <label for="member-name">Team Member:</label>
+                        <input id="member-name" list="members" placeholder="Select or type member name" required>
+                        <datalist id="members">
+                            <option value="Rey"></option>
+                            <option value="Joe"></option>
+                            <option value="Jane Smith"></option>
+                            <option value="Maria Garcia"></option>
+                            <option value="Carlos Rodriguez"></option>
+                            <option value="Sarah Johnson"></option>
+                        </datalist>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="studio">Studio:</label>
+                        <select id="studio" required>
+                            <option value="">Select a studio</option>
+                            <option value="Studio A">Studio A</option>
+                            <option value="Studio B">Studio B</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="booking-date">Date:</label>
+                            <input type="date" id="booking-date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="duration">Duration (hours):</label>
+                            <select id="duration" required>
+                                <option value="1">1 hour</option>
+                                <option value="2">2 hours</option>
+                                <option value="3">3 hours</option>
+                                <option value="4">4 hours</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="booking-form-card">
+                    <h3>Your Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name">First Name:</label>
+                            <input id="first-name" placeholder="Enter your first name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="last-name">Last Name:</label>
+                            <input id="last-name" placeholder="Enter your last name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customer-email">Email:</label>
+                        <input type="email" id="customer-email" placeholder="Enter your email address" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone-number">Phone Number:</label>
+                        <input type="tel" id="phone-number" placeholder="Enter your phone number" required>
+                    </div>
+
+                    <div class="form-actions">
+                        <button id="checkout-btn" class="btn-primary">Review & Checkout</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Checkout Modal -->
+            <div id="checkout-modal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Review & Checkout</h2>
+                        <span class="close-modal">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="checkout-summary">
+                            <h3>Booking Summary</h3>
+                            <div class="summary-details">
+                                <div class="summary-row">
+                                    <span class="summary-label">Team Member:</span>
+                                    <span class="summary-value" id="summary-member"></span>
+                                </div>
+                                <div class="summary-row">
+                                    <span class="summary-label">Date:</span>
+                                    <span class="summary-value" id="summary-date"></span>
+                                </div>
+                                <div class="summary-row">
+                                    <span class="summary-label">Time:</span>
+                                    <span class="summary-value" id="summary-time"></span>
+                                </div>
+                                <div class="summary-row">
+                                    <span class="summary-label">Duration:</span>
+                                    <span class="summary-value" id="summary-duration"></span>
+                                </div>
+                                <div class="summary-row">
+                                    <span class="summary-label">Studio:</span>
+                                    <span class="summary-value" id="summary-studio"></span>
+                                </div>
+                                <div class="summary-row">
+                                    <span class="summary-label">Client:</span>
+                                    <span class="summary-value" id="summary-client"></span>
+                                </div>
+                            </div>
+
+                            <div class="pricing-breakdown">
+                                <h3>Pricing</h3>
+                                <div class="pricing-row">
+                                    <span class="pricing-label">Session Rate (<span id="hourly-rate-display"></span>/hour × <span id="duration-display"></span> hours):</span>
+                                    <span class="pricing-value">$<span id="subtotal-display"></span></span>
+                                </div>
+                                <div class="pricing-row">
+                                    <span class="pricing-label">Booking Fee:</span>
+                                    <span class="pricing-value">$<span id="booking-fee-display"></span></span>
+                                </div>
+                                <div class="pricing-row total-row">
+                                    <span class="pricing-label">Total:</span>
+                                    <span class="pricing-value">$<span id="total-display"></span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="payment-section">
+                            <h3>Payment Information</h3>
+                            <p class="payment-note">This is a demo checkout. In production, this would integrate with a real payment processor like Stripe or PayPal.</p>
+
+                            <div class="form-group">
+                                <label for="card-number">Card Number (Demo):</label>
+                                <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiry-date">Expiry Date:</label>
+                                    <input type="text" id="expiry-date" placeholder="MM/YY" maxlength="5">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV:</label>
+                                    <input type="text" id="cvv" placeholder="123" maxlength="4">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="card-name">Name on Card:</label>
+                                <input type="text" id="card-name" placeholder="John Doe">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="confirm-booking-btn" class="btn-primary">Complete Booking</button>
+                        <button id="cancel-checkout-btn" class="btn-secondary">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calendar-section">
+                <h3>Calendar View</h3>
+                <div id="calendar-month"></div>
+                <h4>Available Hours (select start hour)</h4>
+                <div id="slots" class="slots-grid"></div>
+
+                <h3>Bookings for selected day</h3>
+                <div id="bookings-list"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SVStudio</h3>
+                    <p>Your hub for creative practices, stunning photography, engaging podcasts, and memorable events.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="booking.html">Booking</a></li>
+                        <li><a href="calendar.html">Calendar</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="signup.html">Signup</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="index.html#practices">Practices</a></li>
+                        <li><a href="index.html#photography">Photography</a></li>
+                        <li><a href="index.html#podcast">Podcast</a></li>
+                        <li><a href="index.html#events">Events</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SVStudio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Review & Checkout</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="checkout-summary">
+                    <h3>Booking Summary</h3>
+                    <div class="summary-details">
+                        <div class="summary-row">
+                            <span class="summary-label">Team Member:</span>
+                            <span class="summary-value" id="summary-member"></span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="summary-label">Date:</span>
+                            <span class="summary-value" id="summary-date"></span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="summary-label">Time:</span>
+                            <span class="summary-value" id="summary-time"></span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="summary-label">Duration:</span>
+                            <span class="summary-value" id="summary-duration"></span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="summary-label">Studio:</span>
+                            <span class="summary-value" id="summary-studio"></span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="summary-label">Client:</span>
+                            <span class="summary-value" id="summary-client"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pricing-breakdown">
+                    <h3>Pricing Breakdown</h3>
+                    <div class="pricing-row">
+                        <span class="pricing-label">$<span id="hourly-rate-display"></span> × <span id="duration-display"></span> hours</span>
+                        <span class="pricing-value">$<span id="subtotal-display"></span></span>
+                    </div>
+                    <div class="pricing-row">
+                        <span class="pricing-label">Booking Fee</span>
+                        <span class="pricing-value">$<span id="booking-fee-display"></span></span>
+                    </div>
+                    <div class="pricing-row total-row">
+                        <span class="pricing-label">Total:</span>
+                        <span class="pricing-value">$<span id="total-display"></span></span>
+                    </div>
+                </div>
+
+                <div class="payment-section">
+                    <h3>Payment Information</h3>
+                    <div class="payment-note">
+                        <strong>Demo Mode:</strong> Use card number 1234 5678 9012 3456 for testing
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="card-number">Card Number:</label>
+                            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19">
+                        </div>
+                        <div class="form-group">
+                            <label for="expiry-date">Expiry Date:</label>
+                            <input type="text" id="expiry-date" placeholder="MM/YY" maxlength="5">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cvv">CVV:</label>
+                            <input type="text" id="cvv" placeholder="123" maxlength="4">
+                        </div>
+                        <div class="form-group">
+                            <label for="card-name">Name on Card:</label>
+                            <input type="text" id="card-name" placeholder="John Doe">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="confirm-booking-btn" class="btn-primary">Complete Booking</button>
+                <button id="cancel-checkout-btn" class="btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

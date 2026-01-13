@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar - SVStudio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 1C10.3431 1 9 2.34315 9 4V12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12V4C15 2.34315 13.6569 1 12 1Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M19 10V12C19 16.4183 15.4183 20 11 20C6.58172 20 3 16.4183 3 12V10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 20V23" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8 23H16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h1>SVStudio</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Services</a>
+                        <div class="dropdown-content">
+                            <a href="index.html#practices">Practices</a>
+                            <a href="index.html#photography">Photography</a>
+                            <a href="index.html#podcast">Podcast</a>
+                            <a href="index.html#events">Events</a>
+                        </div>
+                    </li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="booking.html">Booking</a></li>
+                    <li><a href="calendar.html">Calendar</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html">Signup</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <h2>Team Calendar</h2>
+            <p>View and manage bookings for team members. Select a team member and month to see their schedule.</p>
+
+            <!-- Calendar Controls -->
+            <div class="booking-panel" style="margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
+                <div style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
+                    <div>
+                        <label for="member-name" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c3e50;">Team Member:</label>
+                        <input id="member-name" list="members" placeholder="Select or type member name" style="padding: 0.75rem; border: 2px solid #e9ecef; border-radius: 6px; font-size: 1rem; min-width: 200px;">
+                        <datalist id="members">
+                            <option value="Rey"></option>
+                            <option value="Joe"></option>
+                            <option value="Jane Smith"></option>
+                            <option value="Maria Garcia"></option>
+                            <option value="Carlos Rodriguez"></option>
+                            <option value="Sarah Johnson"></option>
+                        </datalist>
+                    </div>
+
+                    <div>
+                        <label for="month-input" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c3e50;">Month:</label>
+                        <input id="month-input" type="month" style="padding: 0.75rem; border: 2px solid #e9ecef; border-radius: 6px; font-size: 1rem;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calendar Display -->
+            <div id="calendar-month"></div>
+
+            <!-- Day Details -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem;">
+                <div class="calendar-section">
+                    <h3>Available Time Slots</h3>
+                    <p style="color: #666; margin-bottom: 1rem;">Click on a date above to see available booking slots.</p>
+                    <div id="slots" class="slots-grid"></div>
+                </div>
+
+                <div class="calendar-section">
+                    <h3>Bookings for Selected Day</h3>
+                    <p style="color: #666; margin-bottom: 1rem;">Existing bookings will appear here when you select a date.</p>
+                    <div id="bookings-list"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SVStudio</h3>
+                    <p>Your hub for creative practices, stunning photography, engaging podcasts, and memorable events.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="booking.html">Booking</a></li>
+                        <li><a href="calendar.html">Calendar</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="signup.html">Signup</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="index.html#practices">Practices</a></li>
+                        <li><a href="index.html#photography">Photography</a></li>
+                        <li><a href="index.html#podcast">Podcast</a></li>
+                        <li><a href="index.html#events">Events</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SVStudio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize calendar page
+        document.addEventListener('DOMContentLoaded', function() {
+            const memberInput = document.getElementById('member-name');
+            const monthInput = document.getElementById('month-input');
+
+            // Set default month to current month
+            const now = new Date();
+            monthInput.value = now.toISOString().slice(0, 7);
+
+            function refreshCalendar() {
+                const member = memberInput.value;
+                const month = monthInput.value;
+                if (member && month) {
+                    renderMonthCalendar(member, month);
+                } else {
+                    document.getElementById('calendar-month').innerHTML =
+                        '<p style="text-align: center; color: #666; padding: 2rem;">Please select a team member and month to view the calendar.</p>';
+                }
+                // Clear day details
+                document.getElementById('slots').innerHTML = '';
+                document.getElementById('bookings-list').innerHTML = '';
+            }
+
+            // Event listeners
+            memberInput.addEventListener('change', refreshCalendar);
+            monthInput.addEventListener('change', refreshCalendar);
+
+            // Initial load - try to load members and refresh
+            fetchMembers().then(() => {
+                // If no member selected, show a message
+                if (!memberInput.value) {
+                    document.getElementById('calendar-month').innerHTML =
+                        '<p style="text-align: center; color: #666; padding: 2rem;">Please select a team member from the dropdown above to view their calendar.</p>';
+                }
+            }).catch(() => {
+                refreshCalendar(); // Fallback
+            });
+        });
+
+        // Helper function to select a calendar day (called from calendar clicks)
+        window.selectCalendarDay = function(dateStr) {
+            // Set the month input to match the selected date
+            document.getElementById('month-input').value = dateStr.slice(0, 7);
+
+            // Set booking date for slots rendering
+            let dateEl = document.getElementById('booking-date');
+            if (!dateEl) {
+                dateEl = document.createElement('input');
+                dateEl.type = 'date';
+                dateEl.id = 'booking-date';
+                dateEl.style.display = 'none';
+                document.body.appendChild(dateEl);
+            }
+            dateEl.value = dateStr;
+
+            // Render slots and bookings for selected day
+            const member = document.getElementById('member-name').value;
+            if (member) {
+                renderSlots(member);
+                renderBookingsList();
+            }
+        };
+    </script>
+</body>
+</html>
